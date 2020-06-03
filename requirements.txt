@@ -1,0 +1,4 @@
+Django 2.2.12
+
+mongo db
+mongodb+srv://kevin:12345@kevincluster-qyien.mongodb.net/test?retryWrites=true&w=majority
