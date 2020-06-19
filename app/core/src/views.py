@@ -3,6 +3,8 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.urls import reverse
 from .forms import ContactForm
 from django.core.mail import EmailMessage
+from userdata.models import DatosUser
+from django.views.generic import ListView
 
 # Create your views here.
 class HomePageView(TemplateView):
@@ -16,15 +18,17 @@ class HomePageView(TemplateView):
         })
 
 
-class NosotrosPageView(TemplateView):
-
+class NosotrosPageView(ListView):
+    model = DatosUser
     template_name = "nosotros.html"
 
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {'titulous':'que tal','titulo2':'como estas'})  
 
-
+class datos(ListView):
+    model = DatosUser
+    template_name = "nosotros.html"
 
 def contacto(request):
     formContact = ContactForm()

@@ -120,42 +120,21 @@
             <section class="row">
               <div class="col-md-5 mt-4">
                 <div class="col-md-12 text-aling">
-                  <form action="">
-                    <div class="form-group">
-                      <label for="">Tipo de peticion</label>
-                      <select class="form-control">
-                        <option value="">Selecione una opcion</option>
-                        <option value="">Queja</option>
-                        <option value="">Reclamo</option>
-                        <option value="">Peticion</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="">Nombre</label>
-                      <input type="text" class="form-control">
-                    </div>
-                    <div class="form-group">
-                      <label for="">Correo electronico</label>
-                      <input type="text" class="form-control">
-                    </div>
-                    <div class="form-group">
-                      <label for="">Mensaje</label>
-                      <textarea name="" id="" rows="2" class="form-control"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <button class="btn btn-danger">Enviar</button>
-                    </div>
-                  
-                  </form>
-
+                  <h3>hola</h3>
+                    {% if object_list %}
+                    {% for DatosUser in object_list %}
+                    <tr>
+                      <td>{{ DatosUser.UserDNI }}</td>
+                      <td>{{ DatosUser.NombUser }}</td>
+                      <td>{{ DatosUser.ApeUser }}</td>
+                      <td>{{ DatosUser.ProfeUser }}</td>
+                    </tr>
+                    {% endfor %}
+                    {%else%}
+                    <h3>no hay</h3>
+                    {% endif %}
                 </div>
-
               </div>
-              <div class="col-md-6 mt-4">
-                <h3>Encuentranos en:</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7163230763854!2d-75.57092368590656!3d6.300956127460148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442f25d6670d4d%3A0x8043999e5e767b96!2sSENA%20-%20Centro%20de%20Tecnolog%C3%ADa%20de%20la%20Manufactura%20Avanzada!5e0!3m2!1ses!2sco!4v1590692220210!5m2!1ses!2sco" width="720" height="380" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-              </div>
-
             </section>
 
           </div>
